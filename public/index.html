@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 副业赚钱网 - 每天多赚200元 | 免费赚钱项目平台</title>
+    <meta name="description" content="每日更新最新赚钱项目，涵盖线上赚钱、电商运营、知识付费、薅羊毛等，让你轻松实现副业收入过万！">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #48bb78;
+            --danger: #f56565;
+            --warning: #ed8936;
+            --dark: #2d3748;
+            --gray: #718096;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .banner h2 { font-size: 28px; margin-bottom: 10px; }
+        .banner p { font-size: 16px; opacity: 0.9; }
+
+        /* 统计 */
+        .stats-bar {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        .stat-item { text-align: center; color: white; }
+        .stat-number { font-size: 32px; font-weight: bold; }
+        .stat-label { font-size: 14px; opacity: 0.8; }
+
+        /* 容器 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+
+        /* 英雄区 */
+        .hero { text-align: center; padding: 60px 20px; color: white; }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; text-shadow: 2px 4px 8px rgba(0,0,0,0.3); }
+        .hero p { font-size: 22px; margin-bottom: 30px; opacity: 0.95; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: white; color: var(--primary); padding: 15px 40px; border-radius: 30px; font-size: 18px; font-weight: bold; text-decoration: none; transition: transform 0.3s; }
+        .btn-primary:hover { transform: scale(1.05); }
+        .btn-secondary { background: rgba(255,255,255,0.2); color: white; padding: 15px 40px; border-radius: 30px; font-size: 18px; text-decoration: none; border: 2px solid white; }
+
+        /* 搜索 */
+        .search-section { max-width: 700px; margin: 40px auto; }
+        .search-box {
+            background: white;
+            padding: 15px;
+            border-radius: 50px;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .search-box input { flex: 1; border: none; padding: 15px 25px; font-size: 18px; outline: none; }
+        .search-box button { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-size: 16px; cursor: pointer; }
+
+        /* 分类标签 */
+        .category-tabs { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 30px 0; }
+        .category-tab {
+            background: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .category-tab:hover, .category-tab.active { background: var(--primary); color: white; }
+
+        /* 项目卡片网格 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-image {
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+        }
+        .project-image::after {
+            content: '点击查看详情';
+            position: absolute;
+            bottom: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .project-card:hover .project-image::after { opacity: 1; }
+        .project-content { padding: 25px; }
+        .project-tag { 
+            display: inline-block; 
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            margin-bottom: 10px;
+        }
+        .tag-hot { background: #fed7d7; color: #c53030; }
+        .tag-new { background: #c6f6d5; color: #276749; }
+        .tag-recommend { background: #bee3f8; color: #2b6cb0; }
+        .tag-profit { background: #feebc8; color: #c05621; }
+        .project-title { font-size: 20px; font-weight: bold; color: var(--dark); margin-bottom: 10px; }
+        .project-desc { color: var(--gray); font-size: 14px; margin-bottom: 15px; }
+        .project-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee; }
+        .project-income { color: var(--danger); font-size: 20px; font-weight: bold; }
+        .project-link { color: var(--primary); text-decoration: none; font-weight: 500; padding: 10px 20px; background: #f7fafc; border-radius: 20px; }
+
+        /* 项目详情模态框 */
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .detail-modal.show { display: flex; }
+        .detail-content {
+            background: white;
+            border-radius: 25px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .detail-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            position: relative;
+        }
+        .detail-header .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .detail-icon { font-size: 80px; margin-bottom: 20px; }
+        .detail-header h2 { font-size: 32px; margin-bottom: 10px; }
+        .detail-header .income { font-size: 28px; font-weight: bold; }
+        .detail-body { padding: 40px; }
+        .detail-section { margin-bottom: 30px; }
+        .detail-section h3 {
+            color: var(--dark);
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .detail-section p { color: var(--gray); line-height: 1.8; }
+        .step-list { list-style: none; }
+        .step-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 15px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-content h4 { color: var(--dark); margin-bottom: 5px; }
+        .step-content p { color: var(--gray); font-size: 14px; }
+        .advantage-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .advantage-item {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .advantage-item .icon { font-size: 40px; margin-bottom: 10px; }
+        .advantage-item .text { color: var(--dark); font-weight: 500; }
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .cta-section h3 { font-size: 24px; margin-bottom: 15px; }
+        .cta-section p { margin-bottom: 25px; opacity: 0.9; }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+        .cta-btn-primary { background: white; color: var(--primary); }
+        .cta-btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid white; }
+
+        /* 订阅区域 - 增强版 */
+        .subscribe-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        .subscribe-section h2 { color: var(--dark); font-size: 32px; margin-bottom: 15px; }
+        .subscribe-section > p { color: var(--gray); margin-bottom: 30px; }
+        
+        /* 订阅步骤 */
+        .subscribe-steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .subscribe-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f7fafc;
+            padding: 15px 25px;
+            border-radius: 30px;
+        }
+        .subscribe-step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .subscribe-step-text { color: var(--dark); font-weight: 500; }
+        
+        /* 订阅表单 */
+        .subscribe-form-container {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .subscribe-form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .subscribe-form-row input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .subscribe-form-row input:focus { border-color: var(--primary); }
+        .subscribe-form-row input::placeholder { color: #a0aec0; }
+        
+        /* 联系方式输入区 */
+        .contact-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .contact-input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .contact-input:focus { border-color: var(--primary); }
+        
+        /* QQ输入区 */
+        .wechat-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .wechat-input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 16px;
+            outline: none;
+        }
+        .wechat-icon {
+            font-size: 40px;
+        }
+        
+        /* 订阅按钮 */
+        .subscribe-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .subscribe-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* 订阅成功提示 */
+        .subscribe-success {
+            display: none;
+            background: #c6f6d5;
+            color: #276749;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .subscribe-success.show { display: block; }
+        .subscribe-success h3 { margin-bottom: 10px; }
+        
+        /* 订阅列表 */
+        .subscribe-list {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f7fafc;
+            border-radius: 15px;
+        }
+        .subscribe-list h3 { color: var(--dark); margin-bottom: 20px; }
+        .subscribe-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .subscribe-list th, .subscribe-list td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .subscribe-list th { background: var(--primary); color: white; }
+        .subscribe-list tr:hover { background: #edf2f7; }
+
+        /* 广告位 */
+        .ad-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+        .ad-label { 
+            position: absolute; 
+            top: 10px; 
+            left: 20px; 
+            background: #e2e8f0; 
+            padding: 5px 15px; 
+            border-radius: 10px; 
+            font-size: 12px; 
+            color: var(--gray);
+        }
+        .ad-content {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 40px;
+            border-radius: 15px;
+        }
+        .ad-title { font-size: 28px; color: var(--dark); margin-bottom: 15px; }
+        .ad-desc { color: var(--gray); margin-bottom: 25px; }
+        .ad-btn { 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 15px 40px; 
+            border-radius: 30px; 
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* 教程区 */
+        .tutorials-section { margin: 50px 0; }
+        .section-title { color: white; text-align: center; font-size: 36px; margin-bottom: 40px; }
+        .tutorial-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .tutorial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .tutorial-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .tutorial-info h3 { color: var(--dark); margin-bottom: 5px; }
+        .tutorial-info p { color: var(--gray); font-size: 14px; }
+
+        /* 赚钱方法 */
+        .methods-section { margin: 50px 0; }
+        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .method-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        .method-icon { font-size: 48px; margin-bottom: 15px; }
+        .method-title { font-size: 20px; margin-bottom: 10px; }
+        .method-desc { font-size: 14px; opacity: 0.8; }
+        .method-income { background: var(--success); padding: 5px 15px; border-radius: 20px; display: inline-block; margin-top: 15px; font-size: 14px; }
+
+        /* 排行榜 */
+        .ranking-section { margin: 50px 0; }
+        .ranking-list { background: white; border-radius: 20px; overflow: hidden; }
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .ranking-item:hover { background: #f7fafc; }
+        .ranking-position {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        .position-1 { background: linear-gradient(135deg, #f6e05e, #d69e2e); color: white; }
+        .position-2 { background: linear-gradient(135deg, #cbd5e0, #a0aec0); color: white; }
+        .position-3 { background: linear-gradient(135deg, #ed8936, #dd6b20); color: white; }
+        .position-other { background: #e2e8f0; color: var(--gray); }
+        .ranking-info { flex: 1; }
+        .ranking-info h3 { color: var(--dark); margin-bottom: 5px; }
+        .ranking-info p { color: var(--gray); font-size: 14px; }
+        .ranking-income { text-align: right; }
+        .ranking-income strong { color: var(--danger); font-size: 20px; }
+        .ranking-income small { display: block; color: var(--gray); font-size: 12px; }
+
+        /* 底部 */
+        .footer { background: rgba(0,0,0,0.2); padding: 50px 20px; color: white; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-section h3 { margin-bottom: 20px; font-size: 18px; }
+        .footer-section a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 10px; }
+        .footer-section a:hover { color: white; }
+        .footer-bottom { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; opacity: 0.7; }
+
+        /* 浮动按钮 */
+        .floating-btns { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .float-btn:hover { transform: scale(1.1); }
+        .wechat-btn { background: #07c160; color: white; }
+        .top-btn { background: var(--primary); color: white; text-decoration: none; }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .nav-links { display: none; }
+            .stats-bar { gap: 30px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .subscribe-form-row { flex-direction: column; }
+            .contact-group, .wechat-group { flex-direction: column; }
+            .floating-btns { bottom: 20px; right: 20px; }
+            .float-btn { width: 50px; height: 50px; font-size: 20px; }
+            .detail-content { margin: 10px; }
+            .detail-header, .detail-body { padding: 25px; }
+            .cta-buttons { flex-direction: column; }
+            .subscribe-steps { flex-direction: column; align-items: center; }
+            .subscribe-step { width: 100%; }
+        }
+
+        /* 动画 */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.6s ease-out; }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">💰 副业赚钱网</div>
+            <div class="nav-links">
+                <a href="#">首页</a>
+                <a href="#projects">赚钱项目</a>
+                <a href="#subscribe">订阅</a>
+                <a href="#methods">方法</a>
+            </div>
+            <a href="#subscribe" class="nav-cta">立即订阅</a>
+        </div>
+    </nav>
+
+    <!-- 横幅 -->
+    <div class="banner">
+        <h2>🎉 新用户限时福利：注册即送 ¥200 优惠券</h2>
+        <p>每日更新50+赚钱项目，涵盖电商、直播、知识付费等热门领域</p>
+    </div>
+
+    <!-- 统计 -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">1286</div>
+            <div class="stat-label">赚钱项目</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">58,420</div>
+            <div class="stat-label">用户正在赚钱</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">¥28,560</div>
+            <div class="stat-label">累计发放佣金</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">99.8%</div>
+            <div class="stat-label">项目真实可靠</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 英雄区 -->
+        <div class="hero">
+            <h1>让赚钱变得简单</h1>
+            <p>每天多赚200元，从这里开始你的副业之路</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">查看赚钱项目 →</a>
+                <a href="#subscribe" class="btn-secondary">立即订阅</a>
+            </div>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="搜索赚钱项目，如：小红书、电商、直播..." id="searchInput">
+                <button onclick="alert('搜索功能开发中')">搜索</button>
+            </div>
+        </div>
+
+        <!-- 分类标签 -->
+        <div class="category-tabs">
+            <span class="category-tab active" onclick="filterProjects('all', this)">全部</span>
+            <span class="category-tab" onclick="filterProjects('hot', this)">🔥 热门</span>
+            <span class="category-tab" onclick="filterProjects('new', this)">🆕 新项目</span>
+            <span class="category-tab" onclick="filterProjects('easy', this)">💼 简单</span>
+            <span class="category-tab" onclick="filterProjects('profit', this)">💰 高收益</span>
+        </div>
+
+        <!-- 项目列表 -->
+        <div class="projects-grid" id="projects">
+            <div class="project-card animate" data-category="hot profit" onclick="showDetail(0)">
+                <div class="project-image">📱</div>
+                <div class="project-content">
+                    <span class="project-tag tag-hot">🔥 热门</span>
+                    <h3 class="project-title">小红书博主养成计划</h3>
+                    <p class="project-desc">从0开始，30天成为小红书博主，接广告月入5000+</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥5000-20000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card animate" data-category="new profit" onclick="showDetail(1)">
+                <div class="project-image">🎬</div>
+                <div class="project-content">
+                    <span class="project-tag tag-new">🆕 新项目</span>
+                    <h3 class="project-title">抖音无人直播带货</h3>
+                    <p class="project-desc">全自动直播系统，24小时持续出单，日收益500-3000元</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥10000-50000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card animate" data-category="hot easy" onclick="showDetail(2)">
+                <div class="project-image">📝</div>
+                <div class="project-content">
+                    <span class="project-tag tag-recommend">⭐ 推荐</span>
+                    <h3 class="project-title">海外问卷调查项目</h3>
+                    <p class="project-desc">利用空闲时间做海外问卷，每份10-100美元</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥3000-15000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card animate" data-category="new passive" onclick="showDetail(3)">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <span class="project-tag tag-new">🆕 新项目</span>
+                    <h3 class="project-title">AI绘图变现训练营</h3>
+                    <p class="project-desc">用AI生成图片，在平台售卖变现，月入过万</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥5000-30000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card animate" data-category="hot easy" onclick="showDetail(4)">
+                <div class="project-image">🛒</div>
+                <div class="project-content">
+                    <span class="project-tag tag-hot">🔥 热门</span>
+                    <h3 class="project-title">闲鱼二手无货源</h3>
+                    <p class="project-desc">零成本启动闲鱼店群玩法，一件代发无需囤货</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥5000-20000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card animate" data-category="profit passive" onclick="showDetail(5)">
+                <div class="project-image">📚</div>
+                <div class="project-content">
+                    <span class="project-tag tag-profit">💰 高收益</span>
+                    <h3 class="project-title">知识付费课程制作</h3>
+                    <p class="project-desc">制作在线课程，一份课程重复销售，获得被动收入</p>
+                    <div class="project-meta">
+                        <div class="project-income">¥10000-50000<span>/月</span></div>
+                        <span class="project-link">查看详情 →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 广告位1 -->
+        <div class="ad-container">
+            <span class="ad-label">广告位</span>
+            <div class="ad-content">
+                <h2 class="ad-title">🎯 AI赚钱实战营 - 限时特价</h2>
+                <p class="ad-desc">原价 ¥1999，现价 ¥299。学会用AI工具，每天多赚200元</p>
+                <a href="#" class="ad-btn">立即抢购 →</a>
+            </div>
+        </div>
+
+        <!-- 教程区 -->
+        <div class="tutorials-section" id="tutorials">
+            <h2 class="section-title">📚 新手入门教程</h2>
+            <div class="tutorial-list">
+                <div class="tutorial-card">
+                    <div class="tutorial-number">1</div>
+                    <div class="tutorial-info">
+                        <h3>如何在3天内建立你的第一个赚钱网站</h3>
+                        <p>从域名购买、服务器配置到网站上线，手把手教学</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-number">2</div>
+                    <div class="tutorial-info">
+                        <h3>10种适合新手的网络赚钱方法</h3>
+                        <p>零成本启动，每天1小时，月入3000+实战分享</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-number">3</div>
+                    <div class="tutorial-info">
+                        <h3>如何通过联盟营销月入过万</h3>
+                        <p>产品选择、推广技巧、变现方法全流程详解</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-number">4</div>
+                    <div class="tutorial-info">
+                        <h3>小红书从0到1完整运营攻略</h3>
+                        <p>账号定位、内容制作、流量获取、变现方式</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 赚钱方法 -->
+        <div class="methods-section" id="methods">
+            <h2 class="section-title">💰 主流赚钱方法</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">🛒</div>
+                    <h3 class="method-title">电商运营</h3>
+                    <p class="method-desc">淘宝、拼多多、抖音小店等平台开店卖货</p>
+                    <span class="method-income">月入 ¥5000-50000</span>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📱</div>
+                    <h3 class="method-title">内容创作</h3>
+                    <p class="method-desc">短视频、直播、文章等内容创作赚取流量收益</p>
+                    <span class="method-income">月入 ¥3000-30000</span>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">💼</div>
+                    <h3 class="method-title">技能服务</h3>
+                    <p class="method-desc">设计、编程、翻译等服务外包接单</p>
+                    <span class="method-income">月入 ¥8000-50000</span>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📚</div>
+                    <h3 class="method-title">知识付费</h3>
+                    <p class="method-desc">制作课程、建立付费社群、知识星球等</p>
+                    <span class="method-income">月入 ¥10000-100000</span>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🎯</div>
+                    <h3 class="method-title">联盟营销</h3>
+                    <p class="method-desc">推广他人产品赚取佣金，无需囤货</p>
+                    <span class="method-income">月入 ¥5000-50000</span>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📊</div>
+                    <h3 class="method-title">问卷调查</h3>
+                    <p class="method-desc">海外问卷、任务平台等简单赚钱方式</p>
+                    <span class="method-income">月入 ¥2000-10000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 排行榜 -->
+        <div class="ranking-section" id="ranking">
+            <h2 class="section-title">🏆 用户赚钱排行榜</h2>
+            <div class="ranking-list">
+                <div class="ranking-item">
+                    <div class="ranking-position position-1">🥇</div>
+                    <div class="ranking-info">
+                        <h3>张老师</h3>
+                        <p>小红书博主 | 粉丝 50万+</p>
+                    </div>
+                    <div class="ranking-income">
+                        <strong>¥128,560</strong>
+                        <small>本月收入</small>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position position-2">🥈</div>
+                    <div class="ranking-info">
+                        <h3>李老板</h3>
+                        <p>抖音带货 | 日销 1000单</p>
+                    </div>
+                    <div class="ranking-income">
+                        <strong>¥98,320</strong>
+                        <small>本月收入</small>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position position-3">🥉</div>
+                    <div class="ranking-info">
+                        <h3>王同学</h3>
+                        <p>问卷调查 | 日赚 ¥500+</p>
+                    </div>
+                    <div class="ranking-income">
+                        <strong>¥45,800</strong>
+                        <small>本月收入</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 订阅区 - 增强版 -->
+        <div class="subscribe-section" id="subscribe">
+            <h2>📧 获取每日赚钱项目推送</h2>
+            <p>每天早9点，准时推送3个最新赚钱项目，附详细操作教程</p>
+            
+            <!-- 订阅步骤 -->
+            <div class="subscribe-steps">
+                <div class="subscribe-step">
+                    <div class="subscribe-step-number">1</div>
+                    <div class="subscribe-step-text">填写信息</div>
+                </div>
+                <div class="subscribe-step">
+                    <div class="subscribe-step-number">2</div>
+                    <div class="subscribe-step-text">提交订阅</div>
+                </div>
+                <div class="subscribe-step">
+                    <div class="subscribe-step-number">3</div>
+                    <div class="subscribe-step-text">等待审核</div>
+                </div>
+                <div class="subscribe-step">
+                    <div class="subscribe-step-number">4</div>
+                    <div class="subscribe-step-text">获取项目</div>
+                </div>
+            </div>
+            
+            <!-- 订阅表单 -->
+            <div class="subscribe-form-container">
+                <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+                    <div class="contact-group">
+                        <input type="text" id="subName" placeholder="您的姓名" required style="flex:1;padding:18px 25px;border:2px solid #e2e8f0;border-radius:15px;font-size:16px;outline:none;">
+                        <input type="tel" id="subPhone" placeholder="手机号码" required style="flex:1;padding:18px 25px;border:2px solid #e2e8f0;border-radius:15px;font-size:16px;outline:none;">
+                    </div>
+                    <div class="contact-group">
+                        <input type="email" id="subEmail" placeholder="电子邮箱" required style="flex:1;padding:18px 25px;border:2px solid #e2e8f0;border-radius:15px;font-size:16px;outline:none;">
+                        <input type="text" id="subWechat" placeholder="QQ号（方便联系）" style="flex:1;padding:18px 25px;border:2px solid #e2e8f0;border-radius:15px;font-size:16px;outline:none;">
+                    </div>
+                    <div class="wechat-group">
+                        <span class="wechat-icon">💬</span>
+                        <input type="text" id="subWant" placeholder="您最想学习哪个赚钱项目？" style="flex:1;padding:18px 25px;border:2px solid #e2e8f0;border-radius:15px;font-size:16px;outline:none;">
+                    </div>
+                    <button type="submit" class="subscribe-btn">🎯 立即订阅 - 获取每日赚钱项目</button>
+                </form>
+                
+                <!-- 成功提示 -->
+                <div class="subscribe-success" id="subscribeSuccess">
+                    <h3>✅ 订阅成功！</h3>
+                    <p>感谢您的订阅！我们会在24小时内联系您，发送最新赚钱项目。</p>
+                    <p style="margin-top:10px;">📱 同时请添加客服QQ：<strong>2726094413</strong></p>
+                </div>
+            </div>
+            
+            <!-- 订阅列表（示例） -->
+            <div class="subscribe-list">
+                <h3>📋 最新订阅用户（仅显示前5名）</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>姓名</th>
+                            <th>邮箱</th>
+                            <th>感兴趣的项目</th>
+                            <th>订阅时间</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscribeTableBody">
+                        <tr><td>1</td><td>张*</td><td>z***@163.com</td><td>小红书博主</td><td>2026-05-16 09:25</td></tr>
+                        <tr><td>2</td><td>李*</td><td>l***@qq.com</td><td>抖音带货</td><td>2026-05-16 09:20</td></tr>
+                        <tr><td>3</td><td>王*</td><td>w***@gmail.com</td><td>AI绘图</td><td>2026-05-16 09:15</td></tr>
+                        <tr><td>4</td><td>刘*</td><td>liu***@126.com</td><td>闲鱼无货源</td><td>2026-05-16 09:10</td></tr>
+                        <tr><td>5</td><td>陈*</td><td>c***@outlook.com</td><td>问卷调查</td><td>2026-05-16 09:05</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 广告位2 -->
+        <div class="ad-container">
+            <span class="ad-label">广告位</span>
+            <div class="ad-content">
+                <h2 class="ad-title">💡 专业推广服务</h2>
+                <p class="ad-desc">让您的项目曝光提升10倍，精准用户引流</p>
+                <a href="#" class="ad-btn">联系我们 →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于网站</h3>
+                <a href="#">关于我们</a>
+                <a href="#">联系我们</a>
+                <a href="#">用户协议</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <div class="footer-section">
+                <h3>赚钱项目</h3>
+                <a href="#">电商项目</a>
+                <a href="#">内容创作</a>
+                <a href="#">技能服务</a>
+                <a href="#">知识付费</a>
+            </div>
+            <div class="footer-section">
+                <h3>帮助中心</h3>
+                <a href="#">常见问题</a>
+                <a href="#">新手入门</a>
+                <a href="#">提现教程</a>
+            </div>
+            <div class="footer-section">
+                <h3>联系客服</h3>
+                <a href="#">📱 QQ：2726094413</a>
+                <a href="#">📧 邮箱：service@earn.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 副业赚钱网 - 让每个人都能轻松赚钱 | 投资有风险，赚钱需谨慎</p>
+        </div>
+    </div>
+
+    <!-- 浮动按钮 -->
+    <div class="floating-btns">
+        <div class="float-btn wechat-btn" onclick="alert('📱 客服QQ：2726094413')">💬</div>
+        <a href="#" class="float-btn top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</a>
+    </div>
+
+    <!-- 项目详情弹窗 -->
+    <div class="detail-modal" id="detailModal">
+        <div class="detail-content">
+            <div class="detail-header" id="detailHeader">
+                <div class="close-btn" onclick="closeDetail()">×</div>
+                <div class="detail-icon" id="detailIcon">📱</div>
+                <h2 id="detailTitle">小红书博主养成计划</h2>
+                <div class="income" id="detailIncome">¥5000-20000/月</div>
+            </div>
+            <div class="detail-body" id="detailBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // 项目详情数据
+        const projectDetails = [
+            {
+                icon: '📱', title: '小红书博主养成计划', income: '¥5000-20000/月',
+                description: '从0开始，30天成为小红书博主，接广告月入5000+。本项目教你从账号定位、内容制作、拍摄剪辑到运营变现的全流程。',
+                steps: [
+                    { title: '账号定位与设置', desc: '选择垂直领域（美妆/穿搭/家居/美食等），完善主页资料，设置统一风格的头像和简介' },
+                    { title: '内容规划与制作', desc: '学习手机拍摄技巧，掌握基础剪辑，使用AI工具辅助内容生产' },
+                    { title: '笔记发布与优化', desc: '掌握标题、封面、正文技巧，使用标签和话题增加曝光' },
+                    { title: '粉丝增长与互动', desc: '学习DOU+投放技巧，回复评论增加粘性，建立粉丝群' },
+                    { title: '变现方式与接单', desc: '品牌广告、带货分成、知识付费等多渠道变现方法' }
+                ],
+                advantages: ['在家就能做', '一部手机即可', '粉丝即是资产', '长期稳定收益', '可复制放大']
+            },
+            {
+                icon: '🎬', title: '抖音无人直播带货', income: '¥10000-50000/月',
+                description: '全自动直播系统，24小时持续出单。单账号日收益500-3000元，支持多账号矩阵操作。',
+                steps: [
+                    { title: '设备准备与软件', desc: '选择适合的电脑配置，安装OBS等直播软件，配置虚拟摄像头' },
+                    { title: '素材获取与处理', desc: '获取带货视频素材，使用AI工具批量处理，生成原创视频' },
+                    { title: '直播场景搭建', desc: '设置虚拟直播间背景，配置弹幕互动脚本，设置自动回复' },
+                    { title: '选品与带货设置', desc: '选择高佣金商品，设置商品链接，配置促销话术' },
+                    { title: '数据分析与优化', desc: '分析直播数据，优化话术和素材，提升转化率' }
+                ],
+                advantages: ['无需出镜', '24小时自动', '多账号放大', '高佣金选品', '全程自动化']
+            },
+            {
+                icon: '📝', title: '海外问卷调查项目', income: '¥3000-15000/月',
+                description: '利用空闲时间做海外问卷，每份10-100美元。无需技能，有手机就能做，日赚50-500元。',
+                steps: [
+                    { title: '平台注册与账号', desc: '注册多个问卷网站账号，使用稳定网络环境，完善个人资料' },
+                    { title: '问卷筛选与答题', desc: '学习识别高价值问卷，掌握答题技巧，提高通过率' },
+                    { title: '多平台同时操作', desc: '同时操作多个问卷平台，批量完成任务，最大化收益' },
+                    { title: '提现与收款', desc: '绑定PayPal等收款方式，了解各平台提现规则，定期提现' },
+                    { title: '进阶技巧', desc: '使用脚本自动化操作，批量注册账号，建立收益系统' }
+                ],
+                advantages: ['无需技能', '随时可做', '收益稳定', '提现快速', '可全职可兼职']
+            },
+            {
+                icon: '🤖', title: 'AI绘图变现训练营', income: '¥5000-30000/月',
+                description: '用AI生成图片，在平台售卖变现。Midjourney进阶教程，教你用AI工具创作高质量图片。',
+                steps: [
+                    { title: 'AI工具学习', desc: '掌握Midjourney、Stable Diffusion等工具的使用方法和提示词技巧' },
+                    { title: '图片创作与优化', desc: '学习生成高质量图片的方法，掌握图片优化和后期处理' },
+                    { title: '平台选择与上传', desc: '在 Shutterstock、Adobe Stock 等平台注册成为贡献者' },
+                    { title: '关键词优化', desc: '设置热门关键词和标签，提高图片搜索排名和销量' },
+                    { title: '批量运营策略', desc: '批量生成图片，建立作品库，制定上架计划' }
+                ],
+                advantages: ['新兴领域', '被动收入', '技术门槛低', '市场需求大', '可持续收益']
+            },
+            {
+                icon: '🛒', title: '闲鱼二手无货源', income: '¥5000-20000/月',
+                description: '零成本启动闲鱼店群玩法，一件代发无需囤货。日出30-100单，月入5000-20000元。',
+                steps: [
+                    { title: '账号准备与养号', desc: '注册多个闲鱼账号，养号提升权重，设置店铺资料' },
+                    { title: '选品与找货源', desc: '在1688等平台寻找高利润商品，学习选品技巧' },
+                    { title: '商品上架与优化', desc: '制作吸引人的商品图，编写高转化标题和描述' },
+                    { title: '客户咨询与成交', desc: '回复买家咨询，促成交易，处理议价和售后问题' },
+                    { title: '多账号放大操作', desc: '复制成功经验到多账号，建立店群提升总收益' }
+                ],
+                advantages: ['零成本启动', '无需囤货', '操作简单', '回款快速', '可复制放大']
+            },
+            {
+                icon: '📚', title: '知识付费课程制作', income: '¥10000-50000/月',
+                description: '制作在线课程，一份课程重复销售。课程完成后可长期获得被动收入。',
+                steps: [
+                    { title: '确定课程主题', desc: '选择自己擅长的领域，分析市场需求和竞争情况' },
+                    { title: '课程内容规划', desc: '制定课程大纲，拆分知识点，设计教学流程' },
+                    { title: '视频录制与制作', desc: '使用手机或相机录制，使用剪映等工具进行后期剪辑' },
+                    { title: '平台选择与上传', desc: '在知乎、得到、小鹅通等平台创建课程，设置价格' },
+                    { title: '推广与销售', desc: '利用自媒体引流，建立学员社群，收集反馈优化课程' }
+                ],
+                advantages: ['被动收入', '一次制作', '长期收益', '边际成本为零', '可定价高价']
+            }
+        ];
+
+        // 显示详情
+        function showDetail(index) {
+            const project = projectDetails[index];
+            document.getElementById('detailIcon').textContent = project.icon;
+            document.getElementById('detailTitle').textContent = project.title;
+            document.getElementById('detailIncome').textContent = project.income;
+            
+            let stepsHTML = project.steps.map((step, i) => `
+                <li>
+                    <div class="step-number">${i + 1}</div>
+                    <div class="step-content">
+                        <h4>${step.title}</h4>
+                        <p>${step.desc}</p>
+                    </div>
+                </li>
+            `).join('');
+            
+            let advantagesHTML = project.advantages.map(a => `
+                <div class="advantage-item">
+                    <div class="icon">✅</div>
+                    <div class="text">${a}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('detailBody').innerHTML = `
+                <div class="detail-section">
+                    <h3>📖 项目介绍</h3>
+                    <p>${project.description}</p>
+                </div>
+                <div class="detail-section">
+                    <h3>📋 操作步骤</h3>
+                    <ul class="step-list">${stepsHTML}</ul>
+                </div>
+                <div class="detail-section">
+                    <h3>✨ 项目优势</h3>
+                    <div class="advantage-list">${advantagesHTML}</div>
+                </div>
+                <div class="cta-section">
+                    <h3>🚀 想要学习这个项目？</h3>
+                    <p>添加客服QQ或填写订阅表单，获取详细教程</p>
+                    <div class="cta-buttons">
+                        <a href="#subscribe" class="cta-btn cta-btn-primary" onclick="closeDetail()">立即订阅</a>
+                        <a href="#" class="cta-btn cta-btn-secondary" onclick="alert('📱 客服QQ：2726094413')">添加QQ</a>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('detailModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭详情
+        function closeDetail() {
+            document.getElementById('detailModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // 筛选项目
+        function filterProjects(category, el) {
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+            el.classList.add('active');
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 使用Vercel API发送邮件
+
+        // 订阅处理
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const name = document.getElementById('subName').value;
+            const phone = document.getElementById('subPhone').value;
+            const email = document.getElementById('subEmail').value;
+            const wechat = document.getElementById('subWechat').value;
+            const want = document.getElementById('subWant').value;
+            
+            const btn = document.querySelector('.subscribe-btn');
+            btn.textContent = '⏳ 提交中...';
+            btn.disabled = true;
+            
+            // 调用Vercel API发送邮件
+            fetch('https://earn-money-website.vercel.app/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, email, wechat, want })
+            }).then(function() {
+                document.getElementById('subscribeSuccess').classList.add('show');
+                const tbody = document.getElementById('subscribeTableBody');
+                const now = new Date();
+                const timeStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0') + ' ' + String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+                const newRow = '<tr><td>new</td><td>'+name[0]+'*</td><td>'+email.substring(0,3)+'***</td><td>'+(want || '待定')+'</td><td>'+timeStr+'</td></tr>';
+                tbody.innerHTML = newRow + tbody.innerHTML;
+                document.getElementById('subscribeForm').reset();
+                btn.textContent = '🎯 立即订阅 - 获取每日赚钱项目';
+                btn.disabled = false;
+                document.getElementById('subscribeSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                alert('✅ 订阅成功！\n\n📱 请添加客服QQ：2726094413\n我们会尽快联系您发送赚钱项目！');
+            }, function() {
+                btn.textContent = '🎯 立即订阅 - 获取每日赚钱项目';
+                btn.disabled = false;
+                alert('❌ 提交失败，请重试或联系客服QQ：2726094413');
+            });
+        }
+
+// 点击背景关闭弹窗
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeDetail();
+        });
+
+        // ESC关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeDetail();
+        });
+    </script>
+</body>
+</html>
